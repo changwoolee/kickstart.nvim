@@ -1,3 +1,11 @@
+-- lua/config/settings.lua
+-- All the vim settings go here.
+
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+vim.g.have_nerd_font = true
+
 local o = vim.o
 local a = vim.api
 
@@ -45,13 +53,15 @@ o.inccommand = "split"
 -- o.foldlevel = 4
 
 -- Better indents
+vim.cmd [[filetype plugin indent on]]
 o.autoindent = true
-o.copyindent = true
-o.breakindent = true
+o.smartindent = true
+o.breakindent = false
 
 -- Better tabs
 o.tabstop = 4
 o.shiftwidth = 4
+o.expandtab = true
 
 -- Spell check
 o.spelllang = "en_us"
@@ -75,6 +85,16 @@ a.nvim_create_autocmd("TextYankPost", {
 	end,
 	group = highlight_group,
 	pattern = "*",
+})
+
+-- Python-specific indentation behavior
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "python",
+  callback = function()
+    vim.opt_local.indentkeys:append("0),0],0},=elif,=except,=finally")
+    vim.opt_local.autoindent = true
+    vim.opt_local.smartindent = true
+  end,
 })
 
 -- Disable unused features
