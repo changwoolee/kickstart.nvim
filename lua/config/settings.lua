@@ -97,6 +97,10 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- pep8-indent
+vim.g.python_pep8_indent_multiline_string = 1
+vim.g.python_pep8_indent_hang_closing = 0
+
 -- Disable unused features
 for _, plugin in pairs({
 	"netrwFileHandlers",
