@@ -17,6 +17,9 @@ return {
 			javascript = { "prettierd" },
 			yaml = { "prettierd" },
 			toml = { "taplo" },
+            json = { "jq" },
+            bash = { "shfmt" },
+            sh = { "shfmt" },
 		},
 	},
 }

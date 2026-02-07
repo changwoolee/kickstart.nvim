@@ -61,7 +61,9 @@ o.breakindent = false
 -- Better tabs
 o.tabstop = 4
 o.shiftwidth = 4
+o.softtabstop = 4
 o.expandtab = true
+o.smarttab = true
 
 -- Spell check
 o.spelllang = "en_us"
