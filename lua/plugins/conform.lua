@@ -11,15 +11,16 @@ return {
 		},
 	},
 	opts = {
+		notify_on_error = true,
 		formatters_by_ft = {
 			markdown = { "prettierd" },
-			python = { "black", "ruff" },
+			python = { "ruff", "black" },
 			javascript = { "prettierd" },
+			json = { "prettierd", "jq" },
 			yaml = { "prettierd" },
 			toml = { "taplo" },
-            json = { "jq" },
-            bash = { "shfmt" },
-            sh = { "shfmt" },
+			bash = { "shfmt" },
+			sh = { "shfmt" },
 		},
 	},
 }
